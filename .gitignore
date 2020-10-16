@@ -1,0 +1,10 @@
+/.idea
+/*.iml
+/dist
+/build
+/target
+/out
+/logs
+/.vscode
+/*.log
+*~
