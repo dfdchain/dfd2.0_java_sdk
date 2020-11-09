@@ -14,6 +14,7 @@ import cash.dfd.dfdjava.operation.NodeException;
 import cash.dfd.dfdjava.operation.TransferOperation;
 import cash.dfd.dfdjava.transaction.Transaction;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -131,4 +132,29 @@ public class NodeClientTests {
 
         log.info("invokeResult: {}", invokeResult);
     }
+
+    @Test
+    public void getDynamicGlobalProperties() throws NodeException {
+        String nodeRpcEndpoint = "ws://localhost:8090";
+        NodeClient nodeClient = new NodeClient(nodeRpcEndpoint);
+
+        nodeClient.open();
+        nodeClient.sendLogin();
+
+        JSONObject obj = nodeClient.getDynamicGlobalProperties();
+        log.info("DynamicGlobalProperties: {}", obj);
+    }
+
+    @Test
+    public void testGetHeadBlockNumber() throws NodeException {
+        String nodeRpcEndpoint = "ws://localhost:8090";
+        NodeClient nodeClient = new NodeClient(nodeRpcEndpoint);
+
+        nodeClient.open();
+        nodeClient.sendLogin();
+
+        String headBlockNumber = nodeClient.getHeadBlockNumber();
+        log.info("headBlockNumber: {}", headBlockNumber);
+    }
+
 }

@@ -185,6 +185,15 @@ public class NodeClient implements Closeable {
         return constructRefInfo(headBlockNumber, headBlockId);
     }
 
+    public JSONObject getDynamicGlobalProperties() throws NodeException {
+        return (JSONObject) callRpc(RPC_DATABASE_SERVICE_ID, "get_dynamic_global_properties", null);
+    }
+
+    public String getHeadBlockNumber() throws NodeException {
+        JSONObject obj =  (JSONObject) callRpc(RPC_DATABASE_SERVICE_ID, "get_dynamic_global_properties", null);
+        return obj.get("head_block_number").toString();
+    }
+
     public String getChainId() throws NodeException {
         return (String) callRpc(RPC_DATABASE_SERVICE_ID, "get_chain_id", null);
     }
