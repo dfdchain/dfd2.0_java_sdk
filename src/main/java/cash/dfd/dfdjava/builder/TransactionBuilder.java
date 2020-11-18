@@ -34,7 +34,7 @@ import java.util.*;
 public class TransactionBuilder {
     private static final Logger log = LoggerFactory.getLogger(TransactionBuilder.class);
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     static {
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
