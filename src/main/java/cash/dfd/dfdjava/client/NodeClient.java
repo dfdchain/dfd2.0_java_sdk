@@ -255,6 +255,11 @@ public class NodeClient implements Closeable {
         return resJson.toJavaObject(TransactionResponse.class);
     }
 
+    public String broadcastTransactionASync(JSONObject signedTransactionJson) throws NodeException {
+        Object obj = callRpc(RPC_NETWORK_SERVICE_ID, "broadcast_transaction_asynchronous", Collections.singletonList(signedTransactionJson));
+        return obj.toString();
+    }
+
     public void sendLogin() throws NodeException {
         callRpc(RPC_LOGIN_SERVICE_ID, "login", Arrays.asList("", ""));
         RPC_DATABASE_SERVICE_ID = Integer.parseInt(callRpc(RPC_LOGIN_SERVICE_ID, "database", null).toString());

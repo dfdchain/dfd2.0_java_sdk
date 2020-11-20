@@ -80,8 +80,8 @@ public class NodeClientTests {
         log.info("unsigned tx: {}", JSON.toJSONString(tx));
         String txJson = TransactionBuilder.signTransaction(tx, wifStr, chainId, Address.ADDRESS_PREFIX);
         log.info("signed tx: {}", txJson);
-        TransactionResponse res = nodeClient.broadcastTransactionSync(JSON.parseObject(txJson));
-        log.info("res: {}", JSON.toJSONString(res));
+        String txId = nodeClient.broadcastTransactionASync(JSON.parseObject(txJson));
+        log.info("txId: {}", txId);
     }
 
     @Test
@@ -111,8 +111,8 @@ public class NodeClientTests {
         log.info("unsigned tx: {}", JSON.toJSONString(tx));
         String txJson = TransactionBuilder.signTransaction(tx, wifStr, chainId, Address.ADDRESS_PREFIX);
         log.info("signed tx: {}", txJson);
-        TransactionResponse res = nodeClient.broadcastTransactionSync(JSON.parseObject(txJson));
-        log.info("res: {}", JSON.toJSONString(res));
+        String txId = nodeClient.broadcastTransactionASync(JSON.parseObject(txJson));
+        log.info("txId: {}", txId);
     }
 
 
