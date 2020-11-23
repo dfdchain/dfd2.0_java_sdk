@@ -4,7 +4,7 @@ public class Constants {
     public static final boolean littleEndian = true;
     public static final int dfdPrecision = 5;
 
-    public static final String mainnetChainId = "68a46fbb5048e5bc0586d38f560e50014f9f34f23679a3fb6ceba63255ba1b1b";
+    public static final String mainnetChainId = "e7d71ca6f5140b3bcb91b44a992eebd55594fe0e980366d60b688c32f53539d3";
 
     public static final int expireTimeout = 86000;
 }
